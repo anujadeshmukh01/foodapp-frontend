@@ -4,7 +4,7 @@ export default class ApiService {
 
 
     //  static BASE_URL = "http://localhost:8090/api";
-     static BASE_URL = "http://16.171.147.124:8090/api";
+     static BASE_URL = "https://foodapp-4-981e.onrender.com/api";
 
     static saveToken(token) {
         localStorage.setItem("token", token);
@@ -367,11 +367,11 @@ export default class ApiService {
     }
 
     static async clearCart() {
-        const resp = await axios.delete(`${this.BASE_URL}/api/cart`, {
-            headers: this.getHeader()
-        });
-        return resp.data;
-    }
+    const resp = await axios.delete(`${this.BASE_URL}/cart`, {
+        headers: this.getHeader()
+    });
+    return resp.data;
+}
 
 
 
